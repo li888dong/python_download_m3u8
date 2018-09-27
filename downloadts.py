@@ -3,8 +3,8 @@ import requests
 import os 
 import datetime
 
-download_path = (os.getcwd() + "_" + "download")
 def download_ts(url):
+    download_path = (os.getcwd() + "_" + "download")
     if not os.path.exists(download_path):        
         os.mkdir(download_path)          
 
@@ -21,6 +21,7 @@ def download_ts(url):
         file.flush()
 
 def merge_ts():
+    download_path = (os.getcwd() + "_" + "download")
     os.chdir(download_path)    
     cmd = "cat * > new.tmp"
     os.system(cmd)
